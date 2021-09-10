@@ -94,6 +94,6 @@ Both commands will execute the tests and save the logs in the 'logBatch' file. t
 
 ### Reproduce a previous experiment
 To reproduce a previous experiment, the intial configuration need to be uploaded in the SQL database stored in VM1. [This](https://github.com/MattiaSalnitri/DaaSinFogComputing/tree/main/Test%20results/incremental%20test/Fog%20environment%20configuration) and [this](https://github.com/MattiaSalnitri/DaaSinFogComputing/tree/main/Test%20results/stress%20test/Fog%20environment%20configuration) folders contain the initial configuration of the experiments whose results are shown in the paper mentioned at the beginning of this readme. to reprouce the experiment drop the old db and upload the desider one usign the following command in VM1:
-- mysql -h 10.75.4.65 --port 3308 -u root -phelloworld -D db -N -e "DROP database db"
-- mysql -h 10.75.4.65 --port 3308 -u root -phelloworld -e "create database db"
-- mysql -h 10.75.4.65 --port 3308 -u root -phelloworld -D db < < path to desired dump>   
+- `mysql -h 10.75.4.65 --port 3308 -u root -phelloworld -D db -N -e "DROP database db"`
+- `mysql -h 10.75.4.65 --port 3308 -u root -phelloworld -e "create database db"`
+- `mysql -h 10.75.4.65 --port 3308 -u root -phelloworld -D db < <path to desired dump>`   
