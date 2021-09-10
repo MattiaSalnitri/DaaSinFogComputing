@@ -19,13 +19,21 @@ variables
    1. login in minio using access key: 'minio', token: 'minio123'
    2. create a new bucket ( button 'create bucket' on the left lower corner)
    3. name of the bucket 'miniobucket'
-   4. upload the file XXX
+   4. upload this [file ](https://github.com/MattiaSalnitri/DaaSinFogComputing/blob/main/Test%20source/Resources/file1.json)
+4. 
+
 
 
 #### VM2
 1. Login as root in VM2
    1. `cd /home/mangiaracina/prova/VM2/db`
    2. `sudo docker-compose up &`
-
+2. Check the service are up and running: open a shell in you local pc
+   1. `ssh <username>@<IP_VM2> -L 9001:<IP_VM2>:9000`
+3. open your local browser and go to http://localhost:9001/
+   1. login in minio using access key: 'minio', token: 'minio123'
+   2. create a new bucket ( button 'create bucket' on the left lower corner)
+   3. name of the bucket 'miniobucket'
+   4. upload this [file ](https://github.com/MattiaSalnitri/DaaSinFogComputing/blob/main/Test%20source/Resources/file1.json)
 
 
