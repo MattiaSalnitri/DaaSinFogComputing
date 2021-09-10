@@ -6,8 +6,8 @@
 
 #### VM1
 1. Login as root in VM1
-  1. `cd /home/mangiaracina/prova/VM1/db`
-  2. `sudo docker-compose up &`
+   1. `cd /home/mangiaracina/prova/VM1/db`
+   2. `sudo docker-compose up &`
 
 
 #### VM2
