@@ -11,6 +11,11 @@ variables
 ## Run Virtual Machines:
 Download the images of the two virtual machines and deply them.
 
+Alternatively you can create two virtual machines, with docker installed, and
+- ucompress the files used for the simulation of the Fog envirobnment, contained [this]() folder respecively on VM1 and 2.
+- uncompress the script files for the test, contained [this]() folder respecively on VM1 and 2.
+- update the path of the scripts below
+
 ## Start base services:
 
 ### VM1
