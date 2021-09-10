@@ -70,4 +70,10 @@ To start the stress test run the following command:
 ### Start incremental tests:
 nohup ./startBatchInjectionIncrementalTest.sh > logBatch 2>&1 &
 
-Both commands will execute the tests and save the logs in the 'logBatch' file. the test may lasts for several days, depending on the amount of resources assigned to the virtual machine. With 20 cores, 32 GB of memoroy, 50 GB hd the tests run for 3-5 days. 
+Both commands will execute the tests and save the logs in the 'logBatch' file. the test may lasts for several days, depending on the amount of resources assigned to the virtual machine. With 20 cores, 32 GB of memoroy, 50 GB hd the tests run for 3 to 5 days. 
+
+### Reproduce a previous experiment
+To reproduce a previous experiment, the intial configuration need to be uploaded in the SQL database stored in VM1. [This]() folder contains the initial configuration of the experiments whose results are shown in the paper mentioned at the beginning of this readme. to reprouce the experiment drop the old db and upload the desider one usign the following command in VM1:
+- mysql -h 10.75.4.65 --port 3308 -u root -phelloworld -D db -N -e "DROP database db"
+- mysql -h 10.75.4.65 --port 3308 -u root -phelloworld -e "create database db"
+- mysql -h 10.75.4.65 --port 3308 -u root -phelloworld -D db < < path to desired dump>   
