@@ -3,13 +3,17 @@
 
 
 variables
-<username>
-<IP_VM1>
-<IP_VM2>
+<username> Username of a power user (admin)
+<IP_VM1> ip address of Virtual machine 1
+<IP_VM2> ip address of Virtual machine 2
 
-### Start base services:
 
-#### VM1
+## Run Virtual Machines:
+Download the images of the two virtual machines and deply them.
+
+## Start base services:
+
+### VM1
 1. start containers: Login as root in VM1
    1. `cd /home/mangiaracina/prova/VM1/db`
    2. `sudo docker-compose up &`
@@ -20,11 +24,19 @@ variables
    2. create a new bucket ( button 'create bucket' on the left lower corner)
    3. name of the bucket 'miniobucket'
    4. upload this [file ](https://github.com/MattiaSalnitri/DaaSinFogComputing/blob/main/Test%20source/Resources/file1.json)
-4. 
+   5. close the shell ONLY when the upload is finished
+4. open your local browser and go to http://<IP_VM1>:8080/
+   1. login with the following authentication details
+      - system = MySql
+      - server = mysql-development
+      - username = root
+      - password = helloworld
+      - database = db
+   2. if the database is not empy, drop it
+   3. import the database contained in [this file](https://github.com/MattiaSalnitri/DaaSinFogComputing/blob/main/Test%20source/Resources/db.sql.gz)
 
 
-
-#### VM2
+### VM2
 1. Login as root in VM2
    1. `cd /home/mangiaracina/prova/VM2/db`
    2. `sudo docker-compose up &`
@@ -35,5 +47,22 @@ variables
    2. create a new bucket ( button 'create bucket' on the left lower corner)
    3. name of the bucket 'miniobucket'
    4. upload this [file ](https://github.com/MattiaSalnitri/DaaSinFogComputing/blob/main/Test%20source/Resources/file1.json)
+   5. close the shell ONLY when the upload is finished
+
+At this point the virtual machines are ready and configured. Tests can be started.
+
+## Start tests:
+
+There are two types of tests that can be executed:
+- stress tests
+- increment tests
 
 
+### Start stress tests:
+To start the stress test run the following command:
+'nohup ./startBatchTest.sh > logBatch 2>&1 &'
+
+### Start incremental tests:
+nohup ./startBatchInjectionIncrementalTest.sh > logBatch 2>&1 &
+
+Both commands will execute the tests and save the logs in the 'logBatch' file. the test may lasts for several days, depending on the amount of resources assigned to the virtual machine. With 20 cores, 32 GB of memoroy, 50 GB hd the tests run for 3-5 days. 
