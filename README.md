@@ -2,19 +2,18 @@
 
 
 
-###Start base services:
+### Start base services:
 
-VM1
-Login root
-`cd /home/mangiaracina/prova/VM1/db`
-`sudo docker-compose up &`
+#### VM1
+1. Login root
+2. `cd /home/mangiaracina/prova/VM1/db`
+3. `sudo docker-compose up &`
 
 
-
-VM2
-Login root
-`cd /home/mangiaracina/prova/VM2/db`
-`sudo docker-compose up &`
+#### VM2
+1. Login root
+2. `cd /home/mangiaracina/prova/VM2/db`
+3. `sudo docker-compose up &`
 
 
 
