@@ -24,7 +24,7 @@ The next part of this file details how to execute the experiments. Few variables
 
 
 ## Run Virtual Machines:
-Download the images of the two virtual machines and deply them.
+Download the images of the two virtual machines from this [link](https://polimi365-my.sharepoint.com/:f:/g/personal/10639193_polimi_it/EgNt5PkmpMNAvrxYXssyjDUBd8H8LKopogFnF9McF0ytqQ?e=uMfw14), and deply them.
 
 Alternatively you can create two virtual machines: 
 - recomended resources: 20 cores, 32 GB of memoroy, 50 GB hd
