@@ -1,8 +1,8 @@
 # DaaS in Fog Computing
 
-This repository contains the information, resources and results of the experiments run for the paper 'Data as a Service in Fog Computing: an Adaptive Multi-agent Based Approach' by Giulia Mangiaracina, Pierluigi Plebani, Mattia Salnitri, Monica Vitali. The paper and the experiments were developed at the Department of Electronics, Information, and Bioengineering, Politecnico di Milano
+This repository contains the information, resources and results of the experiments run for the paper 'Efficient Data as a Service in Fog Computing: an Adaptive Multi-agent Based Approach' by Giulia Mangiaracina, Pierluigi Plebani, Mattia Salnitri, Monica Vitali. The paper and the experiments were developed at the Department of Electronics, Information, and Bioengineering, Politecnico di Milano.
 
-The repository contains the resources for executing the experiment in the folder 'Test source' while the results of the experiment in 'Test results'
+The repository contains the resources for executing the experiment in the folder 'Test source' while the results of the experiment are in 'Test results'.
 
 Test source contains:
 - Code: scripts and files to run the simulation of a Fog environment and execute the tests 
@@ -15,8 +15,9 @@ Test results contains:
 - results.xlsx:  contains all raw and aggregated results presented in teh paper.
 
 
-The next part of this file details how to execute the experiments. Few variables are used:
+The next part of this file details how to executereproduce the experiments. The following variables are used:
 - `<username>` Username of a power user (admin) of the virtual machine
+- `<password>` Password of a power user (admin) of the virtual machine
 - `<IP_VM1>` ip address of Virtual machine 1
 - `<IP_VM2>` ip address of Virtual machine 2
 - `<scriptHome>` path to the folder where the [scripts](https://github.com/MattiaSalnitri/DaaSinFogComputing/tree/main/Test%20source/Code/Test%20scripts) are stored. If the virtual machine provided in this repository are used, then the value of this variable is `/home/salnitri`.
@@ -26,15 +27,23 @@ The next part of this file details how to execute the experiments. Few variables
 ## Run Virtual Machines:
 Download the images of the two virtual machines from this [link](https://polimi365-my.sharepoint.com/:f:/g/personal/10639193_polimi_it/EgNt5PkmpMNAvrxYXssyjDUBd8H8LKopogFnF9McF0ytqQ?e=uMfw14), and deply them.
 
+To set-up the virtual machines:
+- uncompress the files used for the simulation of the Fog envirobnment, contained [this](https://github.com/MattiaSalnitri/DaaSinFogComputing/tree/main/Test%20source/Code/Fog%20simulation%20environment) folder respecively on VM1 and 2.
+- uncompress the script files for the test, contained [this](https://github.com/MattiaSalnitri/DaaSinFogComputing/tree/main/Test%20source/Code/Test%20scripts) folder respecively on VM1 and 2.
+- update the path of the scripts below
+
+The values of variables to be used are
+- `<username>`: `salnitri`
+- `<password>`: `salnitri123`
+- `<scriptHome>`: `/home/salnitri/tests`
+- `<simulationHome>`: `/home/mangiaracina`
+
 Alternatively you can create two virtual machines: 
 - recomended resources: 20 cores, 32 GB of memoroy, 50 GB hd
 - operative system: Linux version 5.4.0-81-generic (buildd@lgw01-amd64-052) (gcc version 9.3.0 (Ubuntu 9.3.0-17ubuntu1~20.04))
 - installed software: Python 3.8.10, Docker version 20.10.7, build 20.10.7-0ubuntu1~20.04.1
 
-To set-up the virtual machines:
-- uncompress the files used for the simulation of the Fog envirobnment, contained [this](https://github.com/MattiaSalnitri/DaaSinFogComputing/tree/main/Test%20source/Code/Fog%20simulation%20environment) folder respecively on VM1 and 2.
-- uncompress the script files for the test, contained [this](https://github.com/MattiaSalnitri/DaaSinFogComputing/tree/main/Test%20source/Code/Test%20scripts) folder respecively on VM1 and 2.
-- update the path of the scripts below
+more information on the software used for the experiment, please refer to [this](https://github.com/GiuMangiaracina/Thesis) repository and documentation.
 
 ## Start base services:
 
@@ -44,6 +53,7 @@ To set-up the virtual machines:
    2. `sudo docker-compose up &`
 2. Check the service are up and running: open a shell in you local pc
    1. `ssh <username>@<IP_VM1> -L 9000:<IP_VM1>:9000`
+   2. insert the `<passwerod>` of the specified username
 3. Open your local browser and go to http://localhost:9000/
    1. login in minio using access key: 'minio', token: 'minio123'
    2. create a new bucket ( button 'create bucket' on the left lower corner)
@@ -57,7 +67,7 @@ To set-up the virtual machines:
       - username = root
       - password = helloworld
       - database = db
-   2. if the database is not empy, drop it
+   2. if the database is not empty, drop it.
    3. import the database contained in [this file](https://github.com/MattiaSalnitri/DaaSinFogComputing/blob/main/Test%20source/Resources/db.sql.gz)
 
 
