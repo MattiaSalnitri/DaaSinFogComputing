@@ -48,19 +48,20 @@ more information on the software used for the experiment, please refer to [this]
 ## Start base services:
 
 ### VM1
-1. Start containers: Login as root in VM1
+1. connect via ssh to VM2 to add the host key 
+2. Start containers: Login as root in VM1
    1. `cd <simulationHome>/prova/VM1/db`
    2. `sudo docker-compose up &`
-2. Check the service are up and running: open a shell in you local pc
+3. Check the service are up and running: open a shell in you local pc
    1. `ssh <username>@<IP_VM1> -L 9000:<IP_VM1>:9000`
-   2. insert the `<passwerod>` of the specified username
-3. Open your local browser and go to http://localhost:9000/
+   2. insert the `<password>` of the specified username
+4. Open your local browser and go to http://localhost:9000/
    1. login in minio using access key: 'minio', token: 'minio123'
    2. create a new bucket ( button 'create bucket' on the left lower corner)
    3. name of the bucket 'miniobucket'
    4. upload this [file ](https://github.com/MattiaSalnitri/DaaSinFogComputing/blob/main/Test%20source/Resources/file1.json)
    5. close the shell ONLY when the upload is finished
-4. Open your local browser and go to `http://<IP_VM1>:8080/`
+5. Open your local browser and go to `http://<IP_VM1>:8080/`
    1. login with the following authentication details
       - system = MySql
       - server = mysql-development
