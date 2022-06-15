@@ -8,10 +8,10 @@ Test source contains:
 - Code: scripts and files to run the simulation of a Fog environment and execute the tests 
 - Resources: files needed to feed the tests
 - requirements.xlsx: specifies the requirements of each spark node (called DAA in the paper). Each box specifies the thresholds of each metric, in the bottom part of every box the metric considered are specfied.
-
-Test results contains:
 - incremental test: contains the configuration randomly generated for the incremental test
 - stress test: contains the configuration randomly generated for the stress test
+
+Test results contains:
 - results.xlsx:  contains all raw and aggregated results presented in teh paper.
 
 
